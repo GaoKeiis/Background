@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <!--以下三个-->
+    <!--<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <title>Dashboard Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <!--<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!--font-->
+    <link rel="stylesheet" href="font/iconfont.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app="router"  data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
+<ui-view></ui-view>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<!--<script src="js/ie10-viewport-bug-workaround.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script>
+    var app = angular.module("router",["ui.router"]);
+        app.config(function($stateProvider,$urlRouterProvider){
+            $urlRouterProvider.otherwise("/home/teamserver/introduce");
+            $urlRouterProvider.when("/home/teamserver","/home/teamserver/introduce")
+            $stateProvider
+                    .state({
+                        name:"home",
+                        url:"/home",
+                        templateUrl:"pages/active.html"
+                    })
+                    .state({
+                        name:"home.teamserver",
+                        url:"/teamserver",
+                        templateUrl:"pages/team-server.html",
+                        controller:function($scope){
+                            $scope.falg1=true;
+                            $scope.go=function(){
+                                $scope.falg1=false;
+                                $scope.falg2=true;
+                            }
+                            $scope.back=function(){
+                                $scope.falg1=true;
+                                $scope.falg2=false;
+                            }
+                        }
+                    })
+                    .state({
+                        name:"home.shou",
+                        url:"/shou",
+                        template:"首页"
+                    })
+                    .state({
+                        name:"home.dang",
+                        url:"/dang",
+                        template:"党组织活动服务"
+                    })
+                    .state({
+                        name:"home.zuzhi",
+                        url:"/zuzhi",
+                        template:"党组织活动服务"
+                    })
+                    .state({
+                        name:"home.zizhi",
+                        url:"/zizhi",
+                        template:"居民自治活动服务"
+                    })
+                    .state({
+                        name:"home.teamserver.introduce",
+                        url:"/introduce",
+                        templateUrl:"pages/introduce.html"
+                    })
+                    .state({
+                        name:"home.teamserver.see",
+                        url:"/see",
+                        templateUrl:"pages/see.html"
+                    })
+                    .state({
+                        name:"home.teamserver.summery",
+                        url:"/summery",
+                        templateUrl:"pages/summary.html"
+                    })
+                    .state({
+                        name:"home.teamserver.introduce1",
+                        url:"/introduce1",
+                        templateUrl:"pages/introduce1.html"
+                    })
+                    .state({
+                        name:"home.teamserver.summery1",
+                        url:"/summery1",
+                        templateUrl:"pages/summary1.html"
+                    })
+
+
+        })
+    app.directive("putEl",putEl)
+    function putEl(){
+        return {
+            restrict:"E",
+            replace:true,
+            scope:{},
+            template:'<div class="input-file">' +
+                '<label for="{{id}}"></label>' +
+            '<input type="file" id="{{id}}">' +
+            '</div>',
+            controller:function($scope){
+                $scope.id="file"+$scope.$id
+            },
+            link:function(scope,ele){
+                var file=ele.find("label")
+                var input=ele.find("input")
+                input.on("change",function(){
+                    var reader=new FileReader();
+                        reader.readAsDataURL(this.files[0]);
+                        reader.onload=function(){
+                            $(file)[0].style.background='url('+this.result+') no-repeat center center'
+                        }
+                })
+            }
+        }
+    }
+</script>
+</body>
+</html>

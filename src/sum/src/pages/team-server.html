@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <ol class="breadcrumb" style="margin-bottom: 0;margin-left: 15px;">
+            <li>当前位置:</li>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">社区养老</a></li>
+            <li><a href="#">离休退休</a></li>
+        </ol>
+    </div>
+    <div class="row bqian-main" style="background: #fff;height: 130px">
+        <div class="bqian col-md-2"><img src="images/title.png" alt=""></div>
+        <div class="party col-md-6">
+            <h3>社区生日会</h3>
+            <p>提供社区五保供养申请的办理指南、注意事项、办理机构等相关的服务。</p>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li role="presentation" ui-sref="home.teamserver.introduce" ui-sref-active="hoverui" ng-show="falg1"><a data-target="#">活动介绍</a></li>
+            <li role="presentation" ui-sref="home.teamserver.see" ui-sref-active="hoverui" ng-show="falg1"><a data-target="#">查看活动</a></li>
+            <li role="presentation" ui-sref="home.teamserver.summery" ui-sref-active="hoverui" ng-show="falg1"><a data-target="#">活动总结</a></li>
+            <li role="presentation" ui-sref="home.teamserver.introduce1"  ui-sref-active="hoverui" ng-show="falg2"><a data-target="#">活动介绍</a></li>
+            <li role="presentation" ui-sref="home.teamserver.summery1"  ui-sref-active="hoverui" ng-show="falg2"><a data-target="#">活动总结</a></li>
+        </ul>
+    </div>
+</div>
+
+<ui-view></ui-view>

@@ -1,0 +1,156 @@
+<ol class="breadcrumb">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">社区养老</a></li>
+    <li class="active">离休退休</li>
+</ol>
+<div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active ">
+            <dl class="tan">
+                <dt><img src="images/icons/icons.png" alt="icons"></dt>
+                <dd>
+                    <h4>社会生日</h4>
+                    <P>提供社区五保供养申请的办理指南、注意事项、办理机构等相关服务</P>
+                </dd>
+            </dl>
+        </div>
+        <div class="item">
+            <dl class="tan">
+                <dt><img src="images/icons/icons.png" alt="icons"></dt>
+                <dd>
+                    <h4>社会生日</h4>
+                    <P>提供社区五保供养申请的办理指南、注意事项、办理机构等相关服务</P>
+                </dd>
+            </dl>
+        </div>
+        <div class="item">
+            <dl class="tan">
+                <dt><img src="images/icons/icons.png" alt="icons"></dt>
+                <dd>
+                    <h4>社会生日</h4>
+                    <P>提供社区五保供养申请的办理指南、注意事项、办理机构等相关服务</P>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel"
+       data-slide="prev">
+    </a>
+    <a class="carousel-control right" href="#myCarousel"
+       data-slide="next">
+    </a>
+</div>
+
+<div class="content">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs nav-teb" role="tablist">
+        <li role="presentation" class="active"><a data-target="#home" aria-controls="home" role="tab" data-toggle="tab">活动介绍</a></li>
+        <li role="presentation"><a data-target="#profile" aria-controls="profile" role="tab" data-toggle="tab">查看活动</a></li>
+        <li role="presentation"><a data-target="#messages" aria-controls="messages" role="tab" data-toggle="tab">活动总结</a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <div class="row">
+                <div class="col-md-10">
+                    <div >
+                        <div id="info">
+                            <div class="col-md-11 bod">
+                                <h4>基本信息</h4>
+                            </div>
+                            <div class="col-md-11 pd-Top">
+                                <p>责任人：张鑫 13032948374</p>
+                                <p>责任人单位：南风里居委会</p>
+                            </div>
+                            <div class="col-md-11 bod">
+                                <h4>请输入栏目名称</h4>
+                            </div>
+                        </div>
+                        <div id="name">
+                            <div class="col-md-11 pd-Top">
+                                <input-tod></input-tod>
+                            </div>
+                        </div>
+                        <div id="resid">
+                            <div class="col-md-11 bod">
+                                <h4>评论区</h4>
+                            </div>
+
+                            <div class="conts">
+                                <div class="col-md-11 bod" ng-repeat="i in txt">
+                                    <p>{{i.name}}{{i.content}}</p>
+                                    <span class="navbar-right">{{i.hui}}</span>
+                                    <time class="navbar-right">{{i.birthday}}</time>
+                                </div>
+                            </div>
+                            <div class="col-md-11 bod">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="3" ng-model="formVal"></textarea>
+                                    </div>
+                                    <botton class="btn navbar-right" ng-click="liao(formVal)">发送</botton>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <nav id="navbar-example" class="navbar nav-side" role="navigation">
+                        <div class="timeline-wrap clearfix">
+                            <span class="circle top"></span>
+                            <span class="circle bottom"></span>
+                            <ul class="nav navbar-nav time-line">
+                                <li class=""><a href="#info">基本信息</a></li>
+                                <li class="active"><a href="#name">请输入栏目名称</a></li>
+                                <li class="dropdown"><a href="#resid">居民预约</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">
+            <div class="row col-md-12 bod">
+                <h4>活动列表</h4>
+            </div>
+            <div class="row col-md-3 chunnuan" >
+                <input-tod></input-tod>
+                <div class="activeList" ui-sref="association.notexam">
+                    <span></span>
+                    <em>未开始</em>
+                </div>
+                <h6>春暖花开社区生日会</h6>
+                <p>2017年3月21日  三鑫社区11号楼2门301</p>
+            </div>
+            <div class="row col-md-3 chunnuan">
+                <input-tod></input-tod>
+                <div class="activeList">
+                    <span class="gray"></span>
+                    <em>已结束</em>
+                </div>
+                <h6>春暖花开社区生日会</h6>
+                <p>2017年3月21日  三鑫社区11号楼2门301</p>
+            </div>
+            <div class="row col-md-3 chunnuan">
+                <input-tod></input-tod>
+                <div class="activeList">
+                    <span class="blue"></span>
+                    <em>已总结</em>
+                </div>
+                <h6>春暖花开社区生日会</h6>
+                <p>2017年3月21日  三鑫社区11号楼2门301</p>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">
+            <div class="row col-md-12 bod">
+                <h4>请输入项目名称</h4>
+            </div>
+            <div class="row col-md-8 pd-Top ppd">
+                <input-tod></input-tod>
+            </div>
+        </div>
+    </div>
+</div>
+<div ui-view></div>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <link rel="stylesheet" href="dist/css/index.css">
+</head>
+<body ng-app="router" data-spy="scroll" data-target="#navbar-example" data-offset="0">
+<div class="container">
+    <div class="page-header">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">注册</a></li>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">通知</a></li>
+                <li><a href="#">设置</a></li>
+            </ul>
+    </div>
+    <nav class="navbar navbar-default">
+        <div class="row col-md-2 navP">
+           三鑫智慧社区
+            <p>一站是惠民服务</p>
+        </div>
+        <div class="row col-md-7">
+            <ul class="nav navbar-nav">
+                <li ui-sref="homepage" ui-sref-active="active"><a href="#">首页</a></li>
+                <li ui-sref="association" ui-sref-active="active" ng-click="add(upanddown)"><a href="#">社区团体活动服务 <span ng-class="['up','dowm'][upanddown]" ></span></a></li>
+                <li ui-sref="knowing" ui-sref-active="active" ng-click="asd(upAnddown)"><a href="#">党组织活动服务<span ng-class="['up','dowm'][upAnddown]"></span></a></li>
+                <li ui-sref="resident" ui-sref-active="active" ng-click="aed(upaNddown)"><a href="#">居民自治活动服务<span ng-class="['up','dowm'][upaNddown]"></span></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div ui-view></div>
+</div>
+</body>
+<script src="dist/js/jquery.min.js"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/angular.min.js"></script>
+<script src="dist/js/angular-ui-router.js"></script>
+<script src="dist/js/app.js"></script>
+</html>
